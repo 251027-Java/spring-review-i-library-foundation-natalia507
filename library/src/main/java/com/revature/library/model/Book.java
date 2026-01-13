@@ -8,19 +8,23 @@ import java.time.LocalDateTime;
  */
 // TODO: Add @Entity annotation
 // TODO: Add @Table(name = "books") annotation
+
+@Entity
+@Table(name = "books")
 public class Book {
 
     // TODO: Add @Id and @GeneratedValue annotations
     @Id
+    @GeneratedValue
     private Long id;
 
-    // TODO: Add @Column(nullable = false) annotation
+    @Column(nullable = false)
     private String title;
 
-    // TODO: Add @Column(nullable = false) annotation
+     @Column(nullable = false)
     private String author;
 
-    // TODO: Add @Column(unique = true) annotation
+    @Column(unique = true)
     private String isbn;
 
     private boolean available = true;
@@ -50,5 +54,29 @@ public class Book {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public String getAuthor() {
+        return author;
+    }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    public String getIsbn() {
+        return isbn;
+    }
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+    public boolean isAvailable() {
+        return available;
+    }
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
     // Add remaining getters/setters...
 }
